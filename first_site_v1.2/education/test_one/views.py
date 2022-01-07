@@ -2,10 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
-def test(request):
-    return HttpResponse('<h1>Тестовая страница.</h1>')
+def index(request):
+    return render(request, 'test_one/index.html')
 
 
-def cats(request):
-    return HttpResponse('<h1>Категории тестовой страницы.</h1>')
-
+def profile(request):
+    return render(request, 'test_one/profile.html')
