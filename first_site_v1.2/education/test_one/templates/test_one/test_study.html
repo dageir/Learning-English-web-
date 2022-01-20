@@ -1,11 +1,25 @@
 {% extends 'test_one/layout.html' %}
 
 {% block title %}
-    Main
+    Exam
 {% endblock %}
 
 {% block body %}
     <div class="container">
         <h1 class="text-center">Exam</h1>
+
+        {% for el in e_test %}
+            <div class="shadow p-3 mb-5 rounded bg-success p-2 text-dark bg-opacity-50">
+            <h4 class="fw-bolder text-center">{{el.question}}</h4>
+                    <select class="form-select fw-bolder" aria-label="Default select example">
+                      <option selected class="fw-bolder"> I dont know</option>
+                        {% for ans in el.answer %}
+                            <option value=" " class="fw-bolder"> {{ans}} </option>
+                        {% endfor %}
+                    </select>
+            </div>
+        {% endfor %}
+
+
     </div>
 {% endblock %}

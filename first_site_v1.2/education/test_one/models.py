@@ -13,6 +13,7 @@ class Exam(models.Model):
         answer = str(self.answers).split('/r')
         return answer
 
+
     class Meta:
         verbose_name = 'Экзамен'
         verbose_name_plural = 'Экзамены'
