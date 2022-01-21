@@ -11,4 +11,10 @@ def profile(request):
 
 def test_study(request):
     e_test = Exam.objects.all()
-    return render(request, 'test_one/test_study.html', {'e_test': e_test})
+
+    trash = {
+        'e_test': e_test,
+    }
+
+
+    return render(request, 'test_one/test_study.html', {'trash': trash})

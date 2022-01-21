@@ -6,11 +6,14 @@ class Exam(models.Model):
     answers = models.TextField('Все возможные ответы на вопросы')
     true_answer = models.CharField('Правильный ответ на вопрос', max_length=50)
 
+
+
     def __str__(self):
         return self.question
 
     def answer(self):
-        answer = str(self.answers).split('/r')
+        key_ans = '33ijf9asjds9aj'
+        answer = str(self.answers).split(key_ans)
         return answer
 
 
