@@ -6,8 +6,6 @@ class Exam(models.Model):
     answers = models.TextField('Все возможные ответы на вопросы')
     true_answer = models.CharField('Правильный ответ на вопрос', max_length=50)
 
-
-
     def __str__(self):
         return self.question
 
@@ -20,3 +18,19 @@ class Exam(models.Model):
     class Meta:
         verbose_name = 'Экзамен'
         verbose_name_plural = 'Экзамены'
+
+class TestingWithChangeAnswer(models.Model):
+
+    question = models.TextField('Вопрос')
+    answer1 = models.CharField('Первый вариант ответа', max_length=250)
+    answer2 = models.CharField('Второй вариант ответа', max_length=250)
+    answer3 = models.CharField('Третий вариант ответа', max_length=250)
+    answer4 = models.CharField('Четвёртый вариант ответа', max_length=250)
+    true_answer = models.CharField('Правильный ответ на вопрос', max_length=250)
+
+    def __str__(self):
+        return self.question
+
+    class Meta:
+        verbose_name = 'Тестирование'
+        verbose_name_plural = 'Тестирования'

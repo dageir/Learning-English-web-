@@ -7,14 +7,15 @@
 {% block body %}
     <div class="container">
         <h1 class="text-center">Exam {{trash.key_ans}}</h1>
-        {% for el in trash.e_test %}
+        {% for el in trash.e_test_v2 %}
             <div class="shadow p-3 mb-5 rounded bg-success p-2 text-dark bg-opacity-50">
             <h4 class="fw-bolder text-center">{{el.question}}</h4>
                     <select class="form-select fw-bolder" aria-label="Default select example">
-                      <option selected class="fw-bolder">  I dont know</option>
-                        {% for ans in el.answer %}
-                            <option value="{{forloop.counter}}" class="fw-bolder"> {{ans}} </option>
-                        {% endfor %}
+                        <option selected class="fw-bolder">  I dont know</option>
+                        <option value="1" class="fw-bolder"> {{el.answer1}} </option>
+                        <option value="2" class="fw-bolder"> {{el.answer2}} </option>
+                        <option value="3" class="fw-bolder"> {{el.answer3}} </option>
+                        <option value="4" class="fw-bolder"> {{el.answer4}} </option>
                     </select>
             </div>
         {% endfor %}

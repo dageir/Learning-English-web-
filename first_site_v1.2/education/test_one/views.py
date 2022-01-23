@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Exam
-from .forms import ExamForm
+from .models import Exam, TestingWithChangeAnswer
+from .forms import ExamForm, TestWChA
 
 def index(request):
     return render(request, 'test_one/index.html')
@@ -12,14 +12,17 @@ def profile(request):
 
 def test_study(request):
     e_test = Exam.objects.all()
+    e_test_v2 = TestingWithChangeAnswer.objects.all()
     trash = {
         'e_test': e_test,
+        'e_test_v2': e_test_v2
     }
 
     return render(request, 'test_one/test_study.html', {'trash': trash})
 
 def add_test(request):
-    form = ExamForm()
+    form_old = ExamForm()
+    form = TestWChA()
     trash = {
         'form': form,
 
